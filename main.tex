@@ -1,0 +1,68 @@
+\documentclass[a4paper]{jsarticle}
+
+\title{$n$次魔方陣の重心は一定である}
+\author{杉崎 行優}
+\date{}
+
+\begin{document}
+
+\maketitle
+\abstract{
+本記事では、$n$次魔方陣の重心が各$n$において一定となることを示す。
+}
+
+\thispagestyle{empty}
+
+\section{$n$次方陣と$n$次魔方陣}
+
+$n$を任意の整数とする。
+
+縦$n$個、横$n$個のマスに$1$から$n^2$の数が$1$つずつ入れられているものを$n$次方陣と定義する。
+$n$次方陣の各マス中の数字を図\ref{tab:square}のように定義する。
+
+\begin{figure}[htb]
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+$m_{(1,1)}$ & $m_{(1,2)}$ & $\cdots$ & $m_{(1,n)}$ \\\hline
+$m_{(2,1)}$ & $m_{(2,2)}$ & $\cdots$ & $m_{(2,n)}$ \\\hline
+$\vdots$ & $\vdots$ & $\ddots$ & $\vdots$ \\\hline
+$m_{(n,1)}$ & $m_{(n,2)}$ & $\cdots$ & $m_{(n,n)}$ \\\hline
+\end{tabular}
+\end{center}
+\caption{$n$次方陣における各マス中の数字}
+\label{tab:square}
+\end{figure}
+
+また、$n$次方陣のうち、縦の$n$列、横の$n$列、斜めの$2$列それぞれの合計が全て等しくなるものを
+$n$次魔方陣と定義する。
+$1$列の合計$L$は式\ref{eqn:OneLine}によって表される。
+
+\begin{equation}
+L=\frac{1}{n}\sum_{i=1}^{n^2}i
+\label{eqn:OneLine}
+\end{equation}
+
+\section{$n$次魔方陣の重心}
+
+横方向の重心を$g_x$、縦方向の重心を$g_y$とすると、
+$g_x$と$g_y$の値はそれぞれ式\ref{eqn:gx}、式\ref{eqn:gy}によって表される。
+よって、$n$次魔方陣の重心が各$n$において一定となることが示された。
+
+\begin{equation} \label{eqn:gx}
+\displaystyle
+g_x = \frac{\displaystyle \sum_{i=1}^n \sum_{j=1}^n m_{(i,j)} \cdot i}{\displaystyle \sum_{i=1}^n \sum_{j=1}^n m_{(i,j)}}
+=\frac{\displaystyle L \cdot \sum_{i=1}^n i}{n \cdot L}
+=\frac{\displaystyle \frac{1}{2} n (n+1)}{n}
+=\frac{1}{2} (n+1)
+\end{equation}
+
+\begin{equation} \label{eqn:gy}
+\displaystyle
+g_y = \frac{\displaystyle \sum_{i=1}^n \sum_{j=1}^n m_{(i,j)} \cdot j}{\displaystyle \sum_{i=1}^n \sum_{j=1}^n m_{(i,j)}}
+=\frac{\displaystyle L \cdot \sum_{j=1}^n j}{n \cdot L}
+=\frac{\displaystyle \frac{1}{2} n (n+1)}{n}
+=\frac{1}{2} (n+1)
+\end{equation}
+
+\end{document}
